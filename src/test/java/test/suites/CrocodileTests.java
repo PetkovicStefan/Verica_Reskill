@@ -90,12 +90,12 @@ public class CrocodileTests extends TestBase {
         Integer crocodileId= createdCrocodileResponse.getId();
 
         //Update filed
-        String name = ValueChooser.getRandomName();
-        crocodileRequest.setName(name);
+        String name1 = ValueChooser.getRandomName();
+        crocodileRequest.setName(name1);
         CreateCrocodileResponse updateCrocodile = CrocodilesAPI.updateSelectedFiled(accessToken, crocodileRequest, crocodileId);
 
         //prepare expected
-        CreateCrocodileResponse expectedCrocodile = new CreateCrocodileResponse(crocodileId, name, crocodileRequest.getSex(),
+        CreateCrocodileResponse expectedCrocodile = new CreateCrocodileResponse(crocodileId, name1, crocodileRequest.getSex(),
                 crocodileRequest.getDateOfBirth(), createdCrocodileResponse.getAge());
 
         //verify actual and expected
